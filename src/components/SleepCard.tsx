@@ -31,7 +31,7 @@ const SleepCard = () => {
           <div><p className="text-3xl font-semibold tracking-tight">{loggedH.toFixed(1)}<span className="ml-1 text-sm font-medium text-muted-foreground">h</span></p><p className="mt-1 text-xs text-muted-foreground">of {targetWeek.toFixed(0)}h weekly target</p></div>
           {last && <p className="text-right text-xs text-muted-foreground">Last logged<br /><span className="font-medium text-foreground">{(last.duration_min/60).toFixed(1)}h</span></p>}
         </div>
-        <div className="mt-5 h-2 overflow-hidden rounded-full bg-white/[0.05]"><div className="h-full rounded-full bg-sky-400/70 transition-all" style={{ width: \`\${progress}%\` }} /></div>
+        <div className="mt-5 h-2 overflow-hidden rounded-full bg-white/[0.05]"><div className="h-full rounded-full bg-sky-400/70 transition-all" style={{ width: `${progress}%` }} /></div>
         <p className="mt-2 text-[11px] text-muted-foreground">{Math.max(0, targetWeek - loggedH).toFixed(1)}h remaining to target</p>
       </section>
       <SleepLogDialog open={open} onClose={() => setOpen(false)} />
