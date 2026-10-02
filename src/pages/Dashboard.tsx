@@ -46,7 +46,6 @@ const Dashboard = () => {
 
   const activeCommitments = commitments?.filter((c) => !c.resolved) ?? [];
   const activeEmergencies = emergencies?.filter((c) => !c.resolved) ?? [];
-  const pausedGoals = goals?.filter((g) => g.status === "paused") ?? [];
 
   const displayName = user?.user_metadata?.full_name?.split(" ")[0] || "there";
   const now = new Date();
