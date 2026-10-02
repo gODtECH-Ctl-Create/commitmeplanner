@@ -14,32 +14,31 @@ const BottomNav = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-card/95 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-lg items-center justify-around py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))]">
+    <nav
+      aria-label="Primary navigation"
+      className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-card/95 backdrop-blur-xl md:left-5 md:top-1/2 md:bottom-auto md:right-auto md:-translate-y-1/2 md:w-20 md:rounded-2xl md:border md:shadow-card"
+    >
+      <div className="mx-auto flex max-w-lg items-center justify-around px-2 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] md:flex-col md:gap-2 md:p-2">
         {tabs.map((tab) => {
           const isActive = location.pathname === tab.path;
+          const Icon = tab.icon;
           return (
             <button
               key={tab.path}
               onClick={() => navigate(tab.path)}
-              className="relative flex flex-col items-center gap-1 px-4 py-1.5"
+              aria-current={isActive ? "page" : undefined}
+              aria-label={tab.label}
+              className="relative flex min-h-12 min-w-12 flex-col items-center justify-center gap-1 rounded-xl px-2 transition-colors hover:bg-muted/70"
             >
               {isActive && (
                 <motion.div
                   layoutId="activeTab"
-                  className="absolute inset-0 rounded-xl gradient-mint opacity-15"
+                  className="absolute inset-0 rounded-xl bg-primary/10"
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 />
               )}
-              <tab.icon
-                size={22}
-                className={isActive ? "text-primary" : "text-muted-foreground"}
-              />
-              <span
-                className={`text-[10px] font-semibold uppercase tracking-wider ${
-                  isActive ? "text-primary" : "text-muted-foreground"
-                }`}
-              >
+              <Icon size={21} className={isActive ? "relative z-10 text-primary" : "relative z-10 text-muted-foreground"} />
+              <span className={isActive ? "relative z-10 text-[9px] font-semibold text-primary" : "relative z-10 text-[9px] font-semibold text-muted-foreground"}>
                 {tab.label}
               </span>
             </button>
