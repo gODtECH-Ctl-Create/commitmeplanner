@@ -15,6 +15,7 @@ import QuickAdjustDialog from "@/components/QuickAdjustDialog";
 import WeeklyCapacityCard from "@/components/WeeklyCapacityCard";
 import TodaysPlan from "@/components/TodaysPlan";
 import SleepCard from "@/components/SleepCard";
+import DailyMoodCard from "@/components/DailyMoodCard";
 import type { Goal } from "@/hooks/useGoals";
 
 const fadeUp = {
@@ -92,7 +93,7 @@ const Dashboard = () => {
                 Something came up
               </p>
               <p className="text-[10px] uppercase tracking-wider text-muted-foreground">
-                {pausedGoals.length} goal{pausedGoals.length !== 1 ? "s" : ""} paused — resolve to resume
+                {activeEmergencies.length} active interruption{activeEmergencies.length !== 1 ? "s" : ""} · schedule recalculated
               </p>
             </div>
             <button
@@ -109,6 +110,7 @@ const Dashboard = () => {
 
         {/* Sleep */}
         <SleepCard />
+        <DailyMoodCard />
 
         {/* Active Goals */}
         {isLoading ? (
