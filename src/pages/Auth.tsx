@@ -19,7 +19,7 @@ const Auth = () => {
   const { user, isReady } = useAuthReady();
 
   if (isReady && user) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/app" replace />;
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
