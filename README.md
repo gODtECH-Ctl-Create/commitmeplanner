@@ -78,14 +78,7 @@ Repository Pages URL:
 
 **https://godtech-ctl-create.github.io/commitmeplanner/**
 
-Add these repository secrets before the Pages workflow runs:
-
-```text
-VITE_SUPABASE_URL
-VITE_SUPABASE_PUBLISHABLE_KEY
-```
-
-The workflow supplies `VITE_BASE_PATH=/commitmeplanner/` during the production build.
+The V1 frontend includes the current public Supabase browser configuration and also accepts `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` as deployment-time overrides. The workflow supplies `VITE_BASE_PATH=/commitmeplanner/` during the production build.
 
 Because V1 uses hash-based routing, direct navigation works on GitHub Pages without a server-side rewrite.
 
