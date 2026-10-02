@@ -20,9 +20,7 @@ export const useTodayMood = () => {
 
   return useQuery({
     queryKey: ["daily_mood", user?.id, "today"],
-    queryFn: async () => {
-      const db = supabase as any;
-      const { data, error } = await db
+    queryFn: async () => {       const { data, error } = await db
         .from("daily_mood_logs")
         .select("*")
         .eq("user_id", user!.id)
@@ -42,9 +40,7 @@ export const useDailyMoodLogs = (days = 35) => {
     queryKey: ["daily_mood_logs", user?.id, days],
     queryFn: async () => {
       const from = new Date();
-      from.setDate(from.getDate() - (days - 1));
-      const db = supabase as any;
-      const { data, error } = await db
+      from.setDate(from.getDate() - (days - 1));       const { data, error } = await db
         .from("daily_mood_logs")
         .select("*")
         .eq("user_id", user!.id)
@@ -62,9 +58,7 @@ export const useSetDailyMood = () => {
   const { user } = useAuthReady();
 
   return useMutation({
-    mutationFn: async ({ mood, note = null }: { mood: number; note?: string | null }) => {
-      const db = supabase as any;
-      const { data, error } = await db
+    mutationFn: async ({ mood, note = null }: { mood: number; note?: string | null }) => {       const { data, error } = await db
         .from("daily_mood_logs")
         .upsert(
           { user_id: user!.id, check_in_date: today(), mood, note },
