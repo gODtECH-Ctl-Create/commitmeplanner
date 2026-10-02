@@ -11,6 +11,7 @@ import {
   stripConflicts,
   sleepLogToBlocks,
   projectSleepForWeek,
+  expandEmergencyCommitmentsToWeek,
   type AllocatableTask,
   type SleepBlock,
 } from "@/lib/timeAllocation";
