@@ -27,7 +27,7 @@ const WeeklyCapacityCard = () => {
       </div>
       <div className="mt-5 overflow-hidden rounded-full bg-white/[0.04]">
         <div className="flex h-3 w-full">
-          {sections.map((item) => <div key={item.label} className={item.color} style={{ width: \`\${Math.max(0, item.value / total * 100)}%\` }} />)}
+          {sections.map((item) => <div key={item.label} className={item.color} style={{ width: `${Math.max(0, item.value / total * 100)}%` }} />)}
         </div>
       </div>
       <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-4">
@@ -49,7 +49,7 @@ const WeeklyCapacityCard = () => {
           <span className="font-medium">{loggedH.toFixed(1)}h logged · {sleepTarget.toFixed(1)}h target</span>
         </div>
         <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/[0.05]">
-          <motion.div initial={{ width: 0 }} animate={{ width: \`\${sleepProgress}%\` }} className="h-full rounded-full bg-sky-400/70" />
+          <motion.div initial={{ width: 0 }} animate={{ width: `${sleepProgress}%` }} className="h-full rounded-full bg-sky-400/70" />
         </div>
       </div>
     </motion.section>
