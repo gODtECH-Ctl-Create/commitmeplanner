@@ -82,7 +82,7 @@ const LaunchScreen = () => {
                   ].map(({ time, title, meta, icon: Icon, muted }, index) => (
                     <motion.div key={title} initial={{ opacity: 0, x: 8 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: .35 + index * .08 }} className="flex items-center gap-3 border-b border-white/[0.05] px-4 py-3.5 last:border-0">
                       <span className="w-12 shrink-0 text-[11px] tabular-nums text-muted-foreground">{time}</span>
-                      <div className={\`grid h-9 w-9 shrink-0 place-items-center rounded-xl \${muted ? "bg-white/[0.04] text-muted-foreground" : "bg-primary/10 text-primary"}\`}>
+                      <div className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${muted ? "bg-white/[0.04] text-muted-foreground" : "bg-primary/10 text-primary"}`}>
                         <Icon size={15} />
                       </div>
                       <div className="min-w-0 flex-1"><p className="truncate text-sm font-semibold">{title}</p><p className="mt-0.5 truncate text-[11px] text-muted-foreground">{meta}</p></div>
