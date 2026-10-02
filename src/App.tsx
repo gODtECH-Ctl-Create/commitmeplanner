@@ -17,7 +17,7 @@ import Dashboard from "./pages/Dashboard";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider clientName="commitme">
+  <QueryClientProvider>
     <TooltipProvider>
       <Toaster />
       <Sonner />
