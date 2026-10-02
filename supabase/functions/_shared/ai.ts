@@ -49,5 +49,5 @@ export async function callAI(body: {
     );
   }
 
-  return response.json();
+  return response;
 }
